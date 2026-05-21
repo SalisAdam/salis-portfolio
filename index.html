@@ -3,383 +3,771 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Salis | Front-End Developer</title>
-<!-- Bootstrap 5 (CSS only) -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <meta name="description" content="Salisu Adam - Fullstack Web Developer & UI/UX Designer specializing in modern web applications, responsive design, and SaaS development." />
+  <meta name="keywords" content="fullstack developer, web developer, UI/UX designer, frontend, backend, Nigeria, Salisu Adam" />
+  <meta name="author" content="Salisu Adam" />
+  <meta property="og:title" content="Salisu Adam | Fullstack Web Developer & UI/UX Designer" />
+  <meta property="og:description" content="Building premium web experiences with modern technologies. Specializing in fullstack development, UI/UX design, and SaaS products." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://salisadam.github.io/salis-portfolio" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <title>Salisu Adam | Fullstack Web Developer & UI/UX Designer</title>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
-  <!-- CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/responsive.css" />
-
-  <!-- Favicon -->
-  <link rel="icon" href="assets/icons/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'></text></svg>" />
 </head>
 <body>
 
-<!-- ===== NAVBAR ===== -->
-<header class="header">
-  <nav class="nav container" role="navigation" aria-label="Main navigation">
-    <!-- Logo: corrected name + semantic link -->
-    <a href="#home" class="logo">Salisu Adam</a>
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <div class="loader">
+      <div class="loader-spinner"></div>
+    </div>
+  </div>
 
-    <!-- Navigation links -->
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <!-- Theme Toggle -->
-    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode">
-      <i class="bi bi-moon"></i>
-    </button>
+  <!-- Scroll Progress Bar -->
+  <div id="progress-bar"></div>
 
-    <!-- Hamburger button -->
-    <button 
-      class="hamburger" 
-      id="hamburger" 
-      aria-label="Toggle navigation menu"
-      aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+  <!-- Animated Background Blobs -->
+  <div class="bg-blob blob-1"></div>
+  <div class="bg-blob blob-2"></div>
+  <div class="bg-blob blob-3"></div>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
+    <div class="container">
+      <a class="navbar-brand" href="#home">Salisu&nbsp;<span class="brand-dot">Adam</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item">
+            <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle theme">
+              <i class="bi bi-sun-fill"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
   </nav>
-</header>
-<!-- ===== HERO ===== -->
-<section class="hero container" id="home">
-  <div class="row align-items-center gy-4">
 
-    <!-- LEFT: ABOUT -->
-    <div class="col-lg-4 text-center text-lg-start">
-      <h1>Hi, I'm <span class="accent">Salis</span></h1>
-      <h2 class="typing"></h2>
-      <p>
-        I build modern, responsive, and user-friendly web interfaces
-        with clean and efficient code.
-      </p>
-
-      <div class="hero-buttons">
-        <a href="#contact" class="btn">Hire Me</a>
-        <a href="#projects" class="btn outline">View Projects</a>
-      </div>
-    </div>
-
-    <!-- CENTER: IMAGE -->
-    <div class="col-lg-4 text-center">
-      <div class="hero-image-wrapper mx-auto">
-        <img src="assets/images/salis.jpg" alt="Avatar">
-      </div>
-    </div>
-
-    <!-- RIGHT: STATS -->
-    <div class="col-lg-4 text-center text-lg-start">
-      <div class="stat m-4">
-        <h3 class="count" data-target="4500">0</h3>
-        <span>Profile Views</span>
-      </div>
-
-      <div class="stat m-4">
-        <h3 class="count" data-target="4">0</h3>
-        <span>Years Experience</span>
-      </div>
-
-      <div class="stat m-4">
-        <h3 class="count" data-target="35">0</h3>
-        <span>Projects Done</span>
-      </div>
-    </div>
-
-  </div>
-</section>    
-
-<!-- ===== ABOUT ===== -->
-<section class="section" id="about">
-  <div class="container">
-    <h2 class="section-title">About Me</h2>
-
-    <!-- Card Wrapper -->
-    <div class="about-card">
-      <div class="about-grid">
-        <!-- LEFT: Bio Text -->
-        <div class="about-text">
-          <p>
-            I'm a passionate Front-End Developer & UI/UX Designer with 4+ years of experience 
-            crafting modern, responsive, and user-centered web applications.
+  <!-- ===== HERO SECTION ===== -->
+  <section id="home" class="hero-section">
+    <div class="container">
+      <div class="row align-items-center min-vh-100">
+        <div class="col-lg-7 hero-content">
+          <div class="hero-badge reveal-up">Fullstack Web Developer</div>
+          <h1 class="hero-title reveal-up">
+            Hi, I'm <span class="gradient-text">Salisu Adam</span>
+          </h1>
+          <div class="hero-typing reveal-up">
+            <span class="typing-text"></span>
+            <span class="typing-cursor">|</span>
+          </div>
+          <p class="hero-description reveal-up">
+            I craft premium digital experiences — from responsive web applications to 
+            full-stack SaaS platforms. I transform complex problems into elegant, 
+            user-centered solutions using modern web technologies.
           </p>
-          <p>
-            My expertise lies in HTML, CSS, JavaScript, and popular frameworks like React and Vue.js. 
-            I focus on creating seamless user experiences with clean, efficient code.
-          </p>
-          <p>
-            I collaborate with startups and teams to build reliable, high-quality products users love.
-          </p>
-          <!-- Download Resume Button -->
-          <a href="assets/resume.pdf" class="btn btn-resume" target="_blank" rel="noopener">
-            Download Resume
-          </a>
+          <div class="hero-actions reveal-up">
+            <a href="#projects" class="btn btn-primary-glow">View My Work</a>
+            <a href="#contact" class="btn btn-outline-light">Let's Talk</a>
+          </div>
+          <div class="hero-social reveal-up">
+            <a href="mailto:samwebcs@gmail.com" aria-label="Email"><i class="bi bi-envelope-fill"></i></a>
+            <a href="https://github.com/SalisAdam" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
+            <a href="https://linkedin.com/in/salisu-adam-9a6381257" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://wa.me/2347064409797" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+          </div>
         </div>
-
-        <!-- RIGHT: Value Highlights -->
-        <div class="about-values">
-        <div class="value-item">
-            <i class="bi bi-lightning-charge value-icon"></i>
-            <div>
-            <h3>Performance First</h3>
-            <p>Optimized for speed, SEO, and Core Web Vitals</p>
-            </div>
-        </div>
-
-        <div class="value-item">
-            <i class="bi bi-universal-access value-icon"></i>
-            <div>
-            <h3>Fully Responsive</h3>
-            <p>lawless on every device — mobile to desktop</p>
-            </div>
-        </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== SKILLS & EDUCATION ===== -->
-<section class="section" id="skills">
-  <div class="container">
-    <h2 class="section-title">Skills & Education</h2>
-
-    <div class="skills-card">
-      <div class="skills-education-grid">
-        <!-- LEFT: Skills -->
-        <div class="skills-section">
-          <h3 class="subsection-title">Technical Skills</h3>
-
-          <div class="skill-item">
+        <div class="col-lg-5 hero-visual">
+          <div class="hero-image-wrapper reveal-scale">
+            <div class="hero-image-glow"></div>
+            <img src="assets/images/salis.jpg" alt="Salisu Adam" class="hero-image" />
+          </div>
+          <!-- Floating Cards -->
+          <div class="floating-card card-1">
             <i class="bi bi-code-slash"></i>
-            <div>
-              <div class="skill-label">
-                <span>Frontend Development</span>
-              </div>
-              <div class="progress-bar">
-                <div class="progress-fill" style="width: 90%"></div>
-              </div>
-            </div>
+            <span>Fullstack</span>
           </div>
-
-          <div class="skill-item">
+          <div class="floating-card card-2">
             <i class="bi bi-palette"></i>
-            <div>
-              <div class="skill-label">
-                <span>UI/UX Design</span>
-              </div>
-              <div class="progress-bar">
-                <div class="progress-fill" style="width: 95%"></div>
-              </div>
+            <span>UI/UX</span>
+          </div>
+          <div class="floating-card card-3">
+            <i class="bi bi-rocket-takeoff"></i>
+            <span>SaaS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator">
+      <span>Scroll</span>
+      <i class="bi bi-chevron-down"></i>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-subtitle">About Me</span>
+        <h2 class="section-title">Transforming Ideas Into <span class="gradient-text">Digital Reality</span></h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-5">
+          <div class="about-image-wrapper reveal-left">
+            <div class="about-image-border"></div>
+            <img src="assets/images/salis.jpg" alt="Salisu Adam" class="about-image" />
+            <div class="about-experience-badge">
+              <span class="exp-number">4+</span>
+              <span class="exp-text">Years Experience</span>
             </div>
           </div>
-
-          <div class="skill-item">
-            <i class="bi bi-layout-wtf"></i>
-            <div>
-              <div class="skill-label">
-                <span>Frameworks & Libraries</span>
+        </div>
+        <div class="col-lg-7">
+          <div class="about-content reveal-right">
+            <p class="about-text">
+              I'm a <strong>Fullstack Web Developer</strong> and <strong>UI/UX Designer</strong> based in Yobe, Nigeria. 
+              My journey into development started with curiosity about how websites work — and grew into a passion 
+              for building complete, production-ready web applications.
+            </p>
+            <p class="about-text">
+              I specialize in turning complex requirements into clean, maintainable code. From architecting 
+              backend systems to crafting pixel-perfect interfaces, I bring a holistic approach to every project. 
+              I believe great software is built at the intersection of technical excellence and thoughtful design.
+            </p>
+            <p class="about-text">
+              When I'm not coding, you'll find me exploring new technologies, contributing to open source, 
+              or working on side projects that solve real-world problems.
+            </p>
+            <div class="about-stats">
+              <div class="about-stat-item">
+                <span class="stat-number" data-count="35">0</span>
+                <span class="stat-label">Projects</span>
               </div>
-              <div class="progress-bar">
-                <div class="progress-fill" style="width: 70%"></div>
+              <div class="about-stat-item">
+                <span class="stat-number" data-count="20">0</span>
+                <span class="stat-label">Happy Clients</span>
+              </div>
+              <div class="about-stat-item">
+                <span class="stat-number" data-count="4">0</span>
+                <span class="stat-label">Years Exp.</span>
               </div>
             </div>
+            <a href="#contact" class="btn btn-primary-glow mt-3">Let's Work Together</a>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-          <div class="skill-item">
-            <i class="bi bi-server"></i>
-            <div>
-              <div class="skill-label">
-                <span>Backend Development</span>
+  <!-- ===== SKILLS SECTION ===== -->
+  <section id="skills" class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-subtitle">Skills & Expertise</span>
+        <h2 class="section-title">Technologies I <span class="gradient-text">Work With</span></h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="row g-4">
+        <!-- Frontend -->
+        <div class="col-lg-4 col-md-6">
+          <div class="skill-category-card reveal-up">
+            <div class="skill-category-header">
+              <div class="skill-icon-wrapper" style="background: rgba(99,102,241,0.15);">
+                <i class="bi bi-code-slash" style="color: #6366f1;"></i>
               </div>
-              <div class="progress-bar">
-                <div class="progress-fill" style="width: 37%"></div>
+              <h3>Frontend Development</h3>
+            </div>
+            <div class="skill-bars">
+              <div class="skill-bar-item">
+                <div class="skill-bar-label">
+                  <span>HTML & CSS</span>
+                  <span class="skill-percent">95%</span>
+                </div>
+                <div class="skill-progress">
+                  <div class="skill-progress-fill" data-width="95" style="background: linear-gradient(90deg, #6366f1, #818cf8);"></div>
+                </div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-label">
+                  <span>JavaScript</span>
+                  <span class="skill-percent">90%</span>
+                </div>
+                <div class="skill-progress">
+                  <div class="skill-progress-fill" data-width="90" style="background: linear-gradient(90deg, #6366f1, #818cf8);"></div>
+                </div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-label">
+                  <span>Bootstrap & Tailwind</span>
+                  <span class="skill-percent">92%</span>
+                </div>
+                <div class="skill-progress">
+                  <div class="skill-progress-fill" data-width="92" style="background: linear-gradient(90deg, #6366f1, #818cf8);"></div>
+                </div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-label">
+                  <span>React</span>
+                  <span class="skill-percent">75%</span>
+                </div>
+                <div class="skill-progress">
+                  <div class="skill-progress-fill" data-width="75" style="background: linear-gradient(90deg, #6366f1, #818cf8);"></div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-
-        <!-- RIGHT: Education -->
-        <div class="education-section">
-          <h3 class="subsection-title">Education & Certifications</h3>
-
-          <div class="cert-item">
-            <i class="bi bi-mortarboard"></i>
-            <div>
-              <h4>B.Sc. Computer Science</h4>
-              <p>University Degree</p>
+        <!-- Backend -->
+        <div class="col-lg-4 col-md-6">
+          <div class="skill-category-card reveal-up">
+            <div class="skill-category-header">
+              <div class="skill-icon-wrapper" style="background: rgba(16,185,129,0.15);">
+                <i class="bi bi-server" style="color: #10b981;"></i>
+              </div>
+              <h3>Backend Development</h3>
+            </div>
+            <div class="skill-bars">
+              <div class="skill-bar-item">
+                <div class="skill-bar-label">
+                  <span>Node.js</span>
+                  <span class="skill-percent">82%</span>
+                </div>
+                <div class="skill-progress">
+                  <div class="skill-progress-fill" data-width="82" style="background: linear-gradient(90deg, #10b981, #34d399);"></div>
+                </div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-label">
+                  <span>PHP</span>
+                  <span class="skill-percent">78%</span>
+                </div>
+                <div class="skill-progress">
+                  <div class="skill-progress-fill" data-width="78" style="background: linear-gradient(90deg, #10b981, #34d399);"></div>
+                </div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-label">
+                  <span>Python</span>
+                  <span class="skill-percent">70%</span>
+                </div>
+                <div class="skill-progress">
+                  <div class="skill-progress-fill" data-width="70" style="background: linear-gradient(90deg, #10b981, #34d399);"></div>
+                </div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-label">
+                  <span>REST APIs</span>
+                  <span class="skill-percent">85%</span>
+                </div>
+                <div class="skill-progress">
+                  <div class="skill-progress-fill" data-width="85" style="background: linear-gradient(90deg, #10b981, #34d399);"></div>
+                </div>
+              </div>
             </div>
           </div>
-
-          <div class="cert-item">
-            <i class="bi bi-award"></i>
-            <div>
-              <h4>National Diploma (ND) in Computer Science</h4>
-              <p>Polytechnic Certification</p>
+        </div>
+        <!-- Database -->
+        <div class="col-lg-4 col-md-6">
+          <div class="skill-category-card reveal-up">
+            <div class="skill-category-header">
+              <div class="skill-icon-wrapper" style="background: rgba(245,158,11,0.15);">
+                <i class="bi bi-database" style="color: #f59e0b;"></i>
+              </div>
+              <h3>Databases</h3>
+            </div>
+            <div class="skill-bars">
+              <div class="skill-bar-item">
+                <div class="skill-bar-label">
+                  <span>MySQL</span>
+                  <span class="skill-percent">85%</span>
+                </div>
+                <div class="skill-progress">
+                  <div class="skill-progress-fill" data-width="85" style="background: linear-gradient(90deg, #f59e0b, #fbbf24);"></div>
+                </div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-label">
+                  <span>PostgreSQL</span>
+                  <span class="skill-percent">75%</span>
+                </div>
+                <div class="skill-progress">
+                  <div class="skill-progress-fill" data-width="75" style="background: linear-gradient(90deg, #f59e0b, #fbbf24);"></div>
+                </div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-label">
+                  <span>MongoDB</span>
+                  <span class="skill-percent">72%</span>
+                </div>
+                <div class="skill-progress">
+                  <div class="skill-progress-fill" data-width="72" style="background: linear-gradient(90deg, #f59e0b, #fbbf24);"></div>
+                </div>
+              </div>
             </div>
           </div>
-
-          <div class="cert-item">
-            <i class="bi bi-display"></i>
-            <div>
-              <h4>Professional Web Design</h4>
-              <p>Specialized Training</p>
+        </div>
+        <!-- UI/UX -->
+        <div class="col-lg-4 col-md-6">
+          <div class="skill-category-card reveal-up">
+            <div class="skill-category-header">
+              <div class="skill-icon-wrapper" style="background: rgba(236,72,153,0.15);">
+                <i class="bi bi-palette" style="color: #ec4899;"></i>
+              </div>
+              <h3>UI/UX Design</h3>
+            </div>
+            <div class="skill-bars">
+              <div class="skill-bar-item">
+                <div class="skill-bar-label">
+                  <span>Figma</span>
+                  <span class="skill-percent">90%</span>
+                </div>
+                <div class="skill-progress">
+                  <div class="skill-progress-fill" data-width="90" style="background: linear-gradient(90deg, #ec4899, #f472b6);"></div>
+                </div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-label">
+                  <span>Wireframing</span>
+                  <span class="skill-percent">85%</span>
+                </div>
+                <div class="skill-progress">
+                  <div class="skill-progress-fill" data-width="85" style="background: linear-gradient(90deg, #ec4899, #f472b6);"></div>
+                </div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-label">
+                  <span>Prototyping</span>
+                  <span class="skill-percent">80%</span>
+                </div>
+                <div class="skill-progress">
+                  <div class="skill-progress-fill" data-width="80" style="background: linear-gradient(90deg, #ec4899, #f472b6);"></div>
+                </div>
+              </div>
             </div>
           </div>
-
-          <div class="cert-item">
-            <i class="bi bi-ui-checks"></i>
-            <div>
-              <h4>UI/ UX Design Certification</h4>
-              <p>User-Centered Design Principles</p>
+        </div>
+        <!-- Tools -->
+        <div class="col-lg-4 col-md-6">
+          <div class="skill-category-card reveal-up">
+            <div class="skill-category-header">
+              <div class="skill-icon-wrapper" style="background: rgba(139,92,246,0.15);">
+                <i class="bi bi-tools" style="color: #8b5cf6;"></i>
+              </div>
+              <h3>Tools & Deployment</h3>
+            </div>
+            <div class="skill-bars">
+              <div class="skill-bar-item">
+                <div class="skill-bar-label">
+                  <span>Git & GitHub</span>
+                  <span class="skill-percent">92%</span>
+                </div>
+                <div class="skill-progress">
+                  <div class="skill-progress-fill" data-width="92" style="background: linear-gradient(90deg, #8b5cf6, #a78bfa);"></div>
+                </div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-label">
+                  <span>Docker</span>
+                  <span class="skill-percent">65%</span>
+                </div>
+                <div class="skill-progress">
+                  <div class="skill-progress-fill" data-width="65" style="background: linear-gradient(90deg, #8b5cf6, #a78bfa);"></div>
+                </div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-label">
+                  <span>CI/CD</span>
+                  <span class="skill-percent">70%</span>
+                </div>
+                <div class="skill-progress">
+                  <div class="skill-progress-fill" data-width="70" style="background: linear-gradient(90deg, #8b5cf6, #a78bfa);"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Tech Badges -->
+        <div class="col-lg-4 col-md-6">
+          <div class="skill-category-card tech-badges-card reveal-up">
+            <div class="skill-category-header">
+              <div class="skill-icon-wrapper" style="background: rgba(6,182,212,0.15);">
+                <i class="bi bi-stars" style="color: #06b6d4;"></i>
+              </div>
+              <h3>Tech Stack</h3>
+            </div>
+            <div class="tech-badges">
+              <span class="tech-badge">HTML5</span>
+              <span class="tech-badge">CSS3</span>
+              <span class="tech-badge">JavaScript</span>
+              <span class="tech-badge">Bootstrap</span>
+              <span class="tech-badge">React</span>
+              <span class="tech-badge">Node.js</span>
+              <span class="tech-badge">PHP</span>
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">MySQL</span>
+              <span class="tech-badge">MongoDB</span>
+              <span class="tech-badge">Git</span>
+              <span class="tech-badge">Figma</span>
+              <span class="tech-badge">Docker</span>
+              <span class="tech-badge">REST APIs</span>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ===== PROJECTS ===== -->
-<section class="section" id="projects">
-  <div class="container">
-    <h2 class="section-title">Projects</h2>
-
-    <div class="projects-grid">
-      <div class="project-card">
-        <img src="assets/images/landing.png" alt="">
-        <h3>Portfolio Website</h3>
-        <p>Modern responsive personal portfolio.</p>
-        <div class="project-links">
-          <a href="https://salisadam.github.io/solaris-health/">Live</a>
-          <a href="https://salisadam.github.io/solaris-health/">GitHub</a>
-        </div>
+  <!-- ===== PROJECTS SECTION ===== -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-subtitle">Projects</span>
+        <h2 class="section-title">Featured <span class="gradient-text">Work</span></h2>
+        <div class="section-divider"></div>
       </div>
-
-      <div class="project-card">
-        <img src="assets/images/portfo.png" alt="">
-        <h3>Landing Page</h3>
-        <p>High-conversion personal landing page.</p>
-        <div class="project-links">
-          <a href="#">Live</a>
-          <a href="https//salisadam.github.io">GitHub</a>
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="project-card reveal-up">
+            <div class="project-image">
+              <img src="assets/images/landing.png" alt="Solaris Health Platform" loading="lazy" />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="https://salisadam.github.io/solaris-health/" target="_blank" rel="noopener" class="project-link-btn"><i class="bi bi-box-arrow-up-right"></i> Live Demo</a>
+                  <a href="https://github.com/SalisAdam" target="_blank" rel="noopener" class="project-link-btn"><i class="bi bi-github"></i> GitHub</a>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>Solaris Health</h3>
+              <p>Healthcare management platform with patient records, appointment scheduling, and analytics dashboard.</p>
+              <div class="project-tech">
+                <span>React</span>
+                <span>Node.js</span>
+                <span>MongoDB</span>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div class="project-card">
-        <img src="assets/images/dashb.png" alt="">
-        <h3>Dashboard UI</h3>
-        <p>Clean admin dashboard interface.</p>
-        <div class="project-links">
-          <a href="#">Live</a>
-          <a href="https://salisadam.github.io/">GitHub</a>
+        <div class="col-lg-4 col-md-6">
+          <div class="project-card reveal-up">
+            <div class="project-image">
+              <img src="assets/images/dashb.png" alt="Admin Dashboard" loading="lazy" />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="https://salisadam.github.io/" target="_blank" rel="noopener" class="project-link-btn"><i class="bi bi-box-arrow-up-right"></i> Live Demo</a>
+                  <a href="https://github.com/SalisAdam" target="_blank" rel="noopener" class="project-link-btn"><i class="bi bi-github"></i> GitHub</a>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>Admin Dashboard</h3>
+              <p>Comprehensive analytics dashboard with real-time data visualization, user management, and reporting modules.</p>
+              <div class="project-tech">
+                <span>React</span>
+                <span>Chart.js</span>
+                <span>Firebase</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="project-card reveal-up">
+            <div class="project-image">
+              <img src="assets/images/portfo.png" alt="Portfolio Website" loading="lazy" />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="#" class="project-link-btn"><i class="bi bi-box-arrow-up-right"></i> Live Demo</a>
+                  <a href="https://github.com/SalisAdam" target="_blank" rel="noopener" class="project-link-btn"><i class="bi bi-github"></i> GitHub</a>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>Premium Portfolio</h3>
+              <p>Modern, responsive portfolio website with glassmorphism effects, smooth animations, and dark mode design.</p>
+              <div class="project-tech">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>Bootstrap</span>
+                <span>JS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="project-card reveal-up">
+            <div class="project-image">
+              <div class="project-placeholder" style="background: linear-gradient(135deg, #6366f1, #06b6d4);">
+                <i class="bi bi-shop"></i>
+              </div>
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="#" class="project-link-btn"><i class="bi bi-box-arrow-up-right"></i> Live Demo</a>
+                  <a href="https://github.com/SalisAdam" target="_blank" rel="noopener" class="project-link-btn"><i class="bi bi-github"></i> GitHub</a>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>E-Commerce Platform</h3>
+              <p>Full-featured e-commerce solution with product management, cart system, payment integration, and order tracking.</p>
+              <div class="project-tech">
+                <span>Node.js</span>
+                <span>Express</span>
+                <span>PostgreSQL</span>
+                <span>Stripe</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="project-card reveal-up">
+            <div class="project-image">
+              <div class="project-placeholder" style="background: linear-gradient(135deg, #ec4899, #8b5cf6);">
+                <i class="bi bi-mortarboard"></i>
+              </div>
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="#" class="project-link-btn"><i class="bi bi-box-arrow-up-right"></i> Live Demo</a>
+                  <a href="https://github.com/SalisAdam" target="_blank" rel="noopener" class="project-link-btn"><i class="bi bi-github"></i> GitHub</a>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>School Management System</h3>
+              <p>Complete educational management platform with student records, grade tracking, attendance, and communication tools.</p>
+              <div class="project-tech">
+                <span>PHP</span>
+                <span>MySQL</span>
+                <span>Bootstrap</span>
+                <span>AJAX</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="project-card reveal-up">
+            <div class="project-image">
+              <div class="project-placeholder" style="background: linear-gradient(135deg, #10b981, #06b6d4);">
+                <i class="bi bi-cloud-arrow-up"></i>
+              </div>
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="#" class="project-link-btn"><i class="bi bi-box-arrow-up-right"></i> Live Demo</a>
+                  <a href="https://github.com/SalisAdam" target="_blank" rel="noopener" class="project-link-btn"><i class="bi bi-github"></i> GitHub</a>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>SaaS Boilerplate</h3>
+              <p>Production-ready SaaS starter kit with authentication, subscription billing, team management, and API architecture.</p>
+              <div class="project-tech">
+                <span>Next.js</span>
+                <span>Prisma</span>
+                <span>Stripe</span>
+                <span>AWS</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ===== CONTACT ===== -->
-<section class="section bg-secondary-color" id="contact">
-  <div class="container">
-    <h2 class="section-title">Get In Touch</h2>
-
-    <div class="contact-grid">
-      <!--  Contact Info -->
-      <div class="contact-info">
-        <p class="contact-text">
-          I'm currently available for freelance projects or full-time opportunities.  
-          Feel free to reach out — I respond within 24 hours.
-        </p>
-
-        <div class="contact-details">
-          <div class="contact-item">
-            <i class="bi bi-envelope"></i>
-            <span><a href="mailto:samwebcs@gmail.com">samwebcs@gmail.com</a></span>
+  <!-- ===== SERVICES SECTION ===== -->
+  <section id="services" class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-subtitle">Services</span>
+        <h2 class="section-title">What I <span class="gradient-text">Deliver</span></h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="service-card reveal-up">
+            <div class="service-icon" style="background: rgba(99,102,241,0.15); color: #6366f1;">
+              <i class="bi bi-layers"></i>
+            </div>
+            <h3>Fullstack Web Development</h3>
+            <p>End-to-end web application development from database architecture to frontend interfaces. Built with modern, scalable technologies.</p>
           </div>
-          <div class="contact-item">
-            <i class="bi bi-telephone"></i>
-            <span><a href="tel:+2347064409797">+234 706 440 9797</a></span>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="service-card reveal-up">
+            <div class="service-icon" style="background: rgba(236,72,153,0.15); color: #ec4899;">
+              <i class="bi bi-palette"></i>
+            </div>
+            <h3>UI/UX Design</h3>
+            <p>User-centered design with clean aesthetics, intuitive interfaces, and seamless user experiences. From wireframes to prototypes.</p>
           </div>
-          <div class="contact-item">
-            <i class="bi bi-geo-alt"></i>
-            <span>Yobe, Nigeria</span>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="service-card reveal-up">
+            <div class="service-icon" style="background: rgba(16,185,129,0.15); color: #10b981;">
+              <i class="bi bi-phone"></i>
+            </div>
+            <h3>Responsive Web Design</h3>
+            <p>Mobile-first responsive websites that work flawlessly across all devices and screen sizes with optimal performance.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="service-card reveal-up">
+            <div class="service-icon" style="background: rgba(245,158,11,0.15); color: #f59e0b;">
+              <i class="bi bi-mortarboard"></i>
+            </div>
+            <h3>School Management Systems</h3>
+            <p>Custom educational platforms with student records, grade management, attendance tracking, and parent communication portals.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="service-card reveal-up">
+            <div class="service-icon" style="background: rgba(6,182,212,0.15); color: #06b6d4;">
+              <i class="bi bi-diagram-3"></i>
+            </div>
+            <h3>API Integration</h3>
+            <p>Seamless third-party API integration including payment gateways, social authentication, cloud services, and data synchronization.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="service-card reveal-up">
+            <div class="service-icon" style="background: rgba(139,92,246,0.15); color: #8b5cf6;">
+              <i class="bi bi-rocket-takeoff"></i>
+            </div>
+            <h3>SaaS Development</h3>
+            <p>Full-cycle SaaS product development — from MVP to production — with subscription management, multi-tenancy, and analytics.</p>
           </div>
         </div>
       </div>
-  <!-- Contact Form -->
-      <form id="contactForm" class="contact-form" action="https://formspree.io/f/mwvvgrvq" method="POST">
-      <div class="form-group">
-        <input type="text" name="name" placeholder="Your Name" required>
-      </div>
-      <div class="form-group">
-        <input type="email" name="email" placeholder="Your Email" required>
-      </div>
-      <div class="form-group">
-        <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
-      </div>
-      <button type="submit" class="btn btn-submit">Send Message</button>
-    </form>
-  </div>
-  </div>
-</section>
+    </div>
+  </section>
 
-<!-- ===== STICKY SOCIAL SIDEBAR ===== -->
-<div class="social-sidebar">
-  <a href="https://x.com/yourusername" target="_blank" rel="noopener" aria-label="X (Twitter)">
-    <i class="bi bi-twitter-x"></i>
-  </a>
-  <a href="https://facebook.com/yourusername" target="_blank" rel="noopener" aria-label="Facebook">
-    <i class="bi bi-facebook"></i>
-  </a>
-  <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener" aria-label="LinkedIn">
-    <i class="bi bi-linkedin"></i>
-  </a>
-  <a href="https://wa.me/2347064409797" target="_blank" rel="noopener" aria-label="WhatsApp">
-    <i class="bi bi-whatsapp"></i>
-  </a>
-</div>
-
-<!-- ===== FOOTER ===== -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-content">
-      <p>&copy; 2026 Salis Adam. All rights reserved.</p>
-      
-      <!-- Social Icons in Footer (mobile + desktop) -->
-      <div class="footer-social">
-        <a href="https://x.com/yourusername" target="_blank" rel="noopener" aria-label="X (Twitter)">
-          <i class="bi bi-twitter-x"></i>
-        </a>
-        <a href="https://facebook.com/yourusername" target="_blank" rel="noopener" aria-label="Facebook">
-          <i class="bi bi-facebook"></i>
-        </a>
-        <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener" aria-label="LinkedIn">
-          <i class="bi bi-linkedin"></i>
-        </a>
-        <a href="https://wa.me/2347064409797" target="_blank" rel="noopener" aria-label="WhatsApp">
-          <i class="bi bi-whatsapp"></i>
-        </a>
+  <!-- ===== CONTACT SECTION ===== -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-subtitle">Contact</span>
+        <h2 class="section-title">Let's Build Something <span class="gradient-text">Amazing</span></h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="row g-5 justify-content-center">
+        <div class="col-lg-5">
+          <div class="contact-info-card reveal-left">
+            <p class="contact-intro">I'm currently available for freelance projects, full-time opportunities, and collaborations. Let's discuss how I can help bring your ideas to life.</p>
+            <div class="contact-details">
+              <div class="contact-item">
+                <div class="contact-item-icon"><i class="bi bi-envelope-fill"></i></div>
+                <div>
+                  <span class="contact-item-label">Email</span>
+                  <a href="mailto:samwebcs@gmail.com">samwebcs@gmail.com</a>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-item-icon"><i class="bi bi-telephone-fill"></i></div>
+                <div>
+                  <span class="contact-item-label">Phone</span>
+                  <a href="tel:+2347064409797">+234 706 440 9797</a>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-item-icon"><i class="bi bi-geo-alt-fill"></i></div>
+                <div>
+                  <span class="contact-item-label">Location</span>
+                  <span>Yobe, Nigeria</span>
+                </div>
+              </div>
+            </div>
+            <div class="contact-social">
+              <a href="https://github.com/SalisAdam" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
+              <a href="https://linkedin.com/in/salisu-adam-9a6381257" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+              <a href="https://wa.me/2347064409797" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+              <a href="mailto:samwebcs@gmail.com" aria-label="Email"><i class="bi bi-envelope-fill"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="contact-form-card reveal-right">
+            <form id="contactForm" action="https://formspree.io/f/mwvvgrvq" method="POST">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required />
+                    <label for="name">Your Name</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required />
+                    <label for="email">Your Email</label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" />
+                    <label for="subject">Subject</label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-floating">
+                    <textarea class="form-control" id="message" name="message" placeholder="Your Message" style="height: 150px;" required></textarea>
+                    <label for="message">Your Message</label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-primary-glow w-100 btn-submit">
+                    <i class="bi bi-send-fill"></i> Send Message
+                  </button>
+                </div>
+                <div id="form-status" class="col-12"></div>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</footer>
+  </section>
 
-<!-- JS -->
-<script src="js/typing.js"></script>
-<script src="js/scroll.js"></script>
-<script src="js/main.js"></script>
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="#home" class="footer-logo">Salisu&nbsp;<span class="brand-dot">Adam</span></a>
+          <p class="footer-tagline">Fullstack Web Developer & UI/UX Designer</p>
+        </div>
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://github.com/SalisAdam" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
+          <a href="https://linkedin.com/in/salisu-adam-9a6381257" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <a href="https://wa.me/2347064409797" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+          <a href="mailto:samwebcs@gmail.com" aria-label="Email"><i class="bi bi-envelope-fill"></i></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Salisu Adam. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
 
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
