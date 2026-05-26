@@ -12,6 +12,9 @@
     if (loadingScreen) {
       setTimeout(function () {
         loadingScreen.classList.add('hidden');
+        setTimeout(function () {
+          loadingScreen.style.display = 'none';
+        }, 700);
       }, 500);
     }
   });
@@ -73,14 +76,15 @@
       'Fullstack Web Developer',
       'UI/UX Designer',
       'Frontend Engineer',
-      'Backend Developer'
+      'Backend Developer',
+      'Data Analyst',
     ];
     var wordIndex = 0;
     var charIndex = 0;
     var isDeleting = false;
-    var typeSpeed = 250;
+    var typeSpeed = 180;
     var deleteSpeed = 150;
-    var pauseTime = 4000;
+    var pauseTime = 3000;
 
     function typeEffect() {
       var currentWord = words[wordIndex];
@@ -316,5 +320,17 @@
       });
     });
   }
+
+  // Fallback: ensure loading screen hidden if load didn't fire or script had issues
+  setTimeout(function () {
+    var ls = document.getElementById('loading-screen');
+    if (ls && !ls.classList.contains('hidden')) {
+      ls.classList.add('hidden');
+      setTimeout(function () {
+        ls.style.display = 'none';
+      }, 700);
+      console.warn('Loading screen auto-hidden by fallback.');
+    }
+  }, 8000);
 
 })();

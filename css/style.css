@@ -159,6 +159,7 @@ ul {
 #loading-screen.hidden {
   opacity: 0;
   visibility: hidden;
+  pointer-events: none;
 }
 
 .loader-spinner {
@@ -504,6 +505,7 @@ ul {
   max-width: 560px;
   line-height: 1.8;
   margin-bottom: 2rem;
+  text-align: left;
 }
 
 .hero-actions {
@@ -823,10 +825,17 @@ ul {
   font-size: 1.05rem;
   line-height: 1.8;
   margin-bottom: 1.2rem;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
 }
 
 .about-text strong {
   color: var(--text-primary);
+}
+
+.about-text:last-child {
+  text-align-last: left;
 }
 
 .about-stats {
